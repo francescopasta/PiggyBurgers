@@ -27,9 +27,9 @@ public class BellyExploding : MonoBehaviour
 
     private void Update()
     {
-        //if(totalScore > 10)
+        //if (totalScore > 10)
         //{
-        //    pig.SetActive(false);
+        //    pig.AddForce();
         //}
     }
 
