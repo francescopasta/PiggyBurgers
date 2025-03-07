@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
-    public float explosionForce = 500f;
-    public float explosionRadius = 5f; 
+    public float explosionForce = 10f; // Adjust force for how high objects go
+    public float explosionRadius = 5f; // Area of effect
 
     void Update()
     {
@@ -22,7 +22,7 @@ public class Explosion : MonoBehaviour
             Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
             if (rb != null)
             {
-                rb.AddExplosionForce(explosionForce, transform.position, explosionRadius);
+                rb.AddForce(Vector3.up * explosionForce, ForceMode.Impulse);
             }
         }
     }
