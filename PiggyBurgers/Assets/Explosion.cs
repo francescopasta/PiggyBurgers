@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
-    public float explosionForce = 10f; // Adjust force for how high objects go
-    public float explosionRadius = 5f; // Area of effect
+    public float explosionForce = 10f;
+    public float explosionRadius = 5f;
+    public float torqueForce = 5f;
 
     void Update()
     {
@@ -23,6 +24,14 @@ public class Explosion : MonoBehaviour
             if (rb != null)
             {
                 rb.AddForce(Vector3.up * explosionForce, ForceMode.Impulse);
+
+                //Vector3 randomTorque = new Vector3(
+                //    Random.Range(-torqueForce, torqueForce),
+                //    Random.Range(-torqueForce, torqueForce),
+                //    Random.Range(-torqueForce, torqueForce)
+                //);
+
+                //rb.AddTorque(randomTorque, ForceMode.Impulse);
             }
         }
     }
