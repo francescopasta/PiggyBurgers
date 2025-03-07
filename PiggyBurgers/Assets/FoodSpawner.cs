@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class SpawnObjects : MonoBehaviour
 {
@@ -7,34 +8,38 @@ public class SpawnObjects : MonoBehaviour
     public float spawnZ = 0f;            // Z position for spawn (fixed at 0)
     public float xStartPosition = -1.6f; // Starting X position
     public float xOffset = 0.9f;         // Distance between spawned objects on the X axis
+    public float spawnInterval = 1f;     // Time interval between each spawn (in seconds)
 
-    void Update()
+    void Start()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            SpawnObjectsInRandomOrder();
-        }
+        // Automatically start spawning objects when the game starts
+        StartCoroutine(SpawnWithInterval());
     }
 
-    void SpawnObjectsInRandomOrder()
+    // Coroutine to spawn objects with a set interval
+    IEnumerator SpawnWithInterval()
     {
-        // Get the number of objects to spawn
-        int numberOfObjects = objectsToSpawn.Length;
-
-        // Generate an array of X positions based on the number of objects
-        float[] xPositions = new float[numberOfObjects];
-        for (int i = 0; i < numberOfObjects; i++)
+        // Run the spawning forever
+        while (true)
         {
-            xPositions[i] = xStartPosition + i * xOffset;
-        }
+            // Random number of objects to spawn (between 3 and 7)
+            int numberToSpawn = Random.Range(3, 8); // Random count between 3 and 7
 
-        // Shuffle the X positions to randomize the order
-        Shuffle(xPositions);
+            // Select a random set of objects from the array
+            GameObject[] selectedObjects = GetRandomObjects(numberToSpawn);
 
-        // Spawn the objects at the randomized positions
-        for (int i = 0; i < numberOfObjects; i++)
-        {
-            GameObject spawnedObject = Instantiate(objectsToSpawn[i], new Vector3(xPositions[i], spawnY, spawnZ), Quaternion.identity);
+            // Shuffle the positions for randomness
+            float[] xPositions = GenerateXPositions(selectedObjects.Length);
+            Shuffle(xPositions);
+
+            // Spawn each object at the randomized positions with the given interval
+            for (int i = 0; i < selectedObjects.Length; i++)
+            {
+                Instantiate(selectedObjects[i], new Vector3(xPositions[i], spawnY, spawnZ), Quaternion.identity);
+            }
+
+            // Wait for the specified interval before spawning the next batch
+            yield return new WaitForSeconds(spawnInterval);
         }
     }
 
@@ -49,5 +54,37 @@ public class SpawnObjects : MonoBehaviour
             array[i] = array[j];
             array[j] = temp;
         }
+    }
+
+    // Generate X positions for the number of objects to spawn
+    float[] GenerateXPositions(int numObjects)
+    {
+        float[] xPositions = new float[numObjects];
+        for (int i = 0; i < numObjects; i++)
+        {
+            xPositions[i] = xStartPosition + i * xOffset;
+        }
+        return xPositions;
+    }
+
+    // Get a random set of objects to spawn
+    GameObject[] GetRandomObjects(int numberToSpawn)
+    {
+        GameObject[] selectedObjects = new GameObject[numberToSpawn];
+        bool[] usedIndices = new bool[objectsToSpawn.Length];
+
+        for (int i = 0; i < numberToSpawn; i++)
+        {
+            int randomIndex;
+            do
+            {
+                randomIndex = Random.Range(0, objectsToSpawn.Length);
+            } while (usedIndices[randomIndex]); // Ensure the object is not selected more than once
+
+            selectedObjects[i] = objectsToSpawn[randomIndex];
+            usedIndices[randomIndex] = true; // Mark the object as used
+        }
+
+        return selectedObjects;
     }
 }

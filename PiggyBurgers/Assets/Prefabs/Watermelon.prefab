@@ -13,6 +13,10 @@ PrefabInstance:
       value: Watermelon
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 7977e423937da9b48aac1866c67bb5be, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 7977e423937da9b48aac1866c67bb5be, type: 3}
       propertyPath: m_TagString
       value: Watermelon
       objectReference: {fileID: 0}
@@ -84,6 +88,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 7977e423937da9b48aac1866c67bb5be, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1990311663870279425}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 7977e423937da9b48aac1866c67bb5be, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -1104173753406148722}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 7977e423937da9b48aac1866c67bb5be, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9034567054011596301}
   m_SourcePrefab: {fileID: 100100000, guid: 7977e423937da9b48aac1866c67bb5be, type: 3}
 --- !u!1 &331808479075933576 stripped
 GameObject:
@@ -165,3 +175,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 50
+--- !u!114 &-1104173753406148722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331808479075933576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b1e81e88d9b9ae48a7431679e272593, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayTime: 2
+  destroyTag: Enemy
+  specificCollider: {fileID: 9034567054011596301}
+--- !u!136 &9034567054011596301
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331808479075933576}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 0.32
+  m_Height: 0.86
+  m_Direction: 0
+  m_Center: {x: 0.0000013411045, y: 0.14771205, z: -0.000000007450581}

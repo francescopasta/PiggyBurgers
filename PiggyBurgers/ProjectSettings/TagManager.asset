@@ -11,6 +11,8 @@ TagManager:
   - Hamburger
   - Cheese
   - Hotdog
+  - Olive
+  - Platform
   layers:
   - Default
   - TransparentFX
