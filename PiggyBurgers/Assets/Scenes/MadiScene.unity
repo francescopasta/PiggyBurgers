@@ -119,6 +119,62 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &107495896
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 107495897}
+  - component: {fileID: 107495898}
+  m_Layer: 0
+  m_Name: FoodSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &107495897
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107495896}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &107495898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107495896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d75c5f9f476656c4dabdea885edc3d91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsToSpawn:
+  - {fileID: 4148463674512713648, guid: 94d2e11c0ec014241ab288593f8fcfc8, type: 3}
+  - {fileID: 7702468302846681578, guid: da4a0e6b61918684a8dd228becc1ce93, type: 3}
+  - {fileID: 6352152034875472891, guid: e47edbd83611ced4f96e3e82c82b2680, type: 3}
+  - {fileID: 2995305203619090433, guid: 827c06ed492e47841b3969cba3099d0e, type: 3}
+  - {fileID: 3963536921741735025, guid: b4ead1917a7c732498e572d03739f97c, type: 3}
+  - {fileID: 2559634744578900613, guid: acee1bcc6cee51f44b9314bc71066325, type: 3}
+  - {fileID: 331808479075933576, guid: e6b171d2b236b2d43a4678828a9a05fe, type: 3}
+  spawnXStart: -1.6
+  spawnY: 1.35
+  spawnZ: 0
+  xOffset: 0.9
 --- !u!1 &477460884
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,7 +294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7702468302846983626, guid: da4a0e6b61918684a8dd228becc1ce93, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.72
+      value: -0.636
       objectReference: {fileID: 0}
     - target: {fileID: 7702468302846983626, guid: da4a0e6b61918684a8dd228becc1ce93, type: 3}
       propertyPath: m_LocalPosition.y
@@ -845,8 +901,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1692782718}
   - component: {fileID: 1692782717}
+  - component: {fileID: 1692782719}
   m_Layer: 0
-  m_Name: KillVoid
+  m_Name: DestroyVoid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -882,12 +939,24 @@ Transform:
   m_GameObject: {fileID: 1692782716}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.57, z: 0}
-  m_LocalScale: {x: 128.73, y: 1, z: 30.36}
+  m_LocalPosition: {x: 0, y: -5.58, z: 0}
+  m_LocalScale: {x: 128.73, y: 1, z: 92.88}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1692782719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692782716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69c0b7b55fd77b44f933816d295d8eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1754994411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1105,8 +1174,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionForce: 8.5
-  explosionRadius: 50
-  torqueForce: 0.05
+  explosionRadius: 3
+  torqueForce: 5
 --- !u!65 &2041835352
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1135,6 +1204,7 @@ SceneRoots:
   - {fileID: 477460887}
   - {fileID: 1485827355}
   - {fileID: 2041835349}
+  - {fileID: 107495897}
   - {fileID: 2016460972}
   - {fileID: 617184995}
   - {fileID: 621001794}
