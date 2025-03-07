@@ -34,7 +34,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 461f0170c82b53340a9812199b63bbd4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.62
+      value: -3.027
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 461f0170c82b53340a9812199b63bbd4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -114,6 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fruitTag: 
   fruitStorage: {fileID: 0}
+  moveDuration: 0.5
 --- !u!54 &7245128662463361327
 Rigidbody:
   m_ObjectHideFlags: 0

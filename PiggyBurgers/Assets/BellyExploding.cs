@@ -8,7 +8,7 @@ public class BellyExploding : MonoBehaviour
     public Dictionary<string, int> fruitToPoint;
 
     public GameObject pig;
-
+    
     void Start()
     {
         totalScore = (int)transform.localScale.x;
