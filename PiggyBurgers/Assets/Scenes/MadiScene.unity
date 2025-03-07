@@ -683,18 +683,6 @@ PrefabInstance:
       value: PIG
       objectReference: {fileID: 0}
     - target: {fileID: 5396529524756922933, guid: bd4eff165d57b9e45887c4c3b184d784, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5396529524756922933, guid: bd4eff165d57b9e45887c4c3b184d784, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5396529524756922933, guid: bd4eff165d57b9e45887c4c3b184d784, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5396529524756922933, guid: bd4eff165d57b9e45887c4c3b184d784, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10
       objectReference: {fileID: 0}
@@ -733,10 +721,6 @@ PrefabInstance:
     - target: {fileID: 5396529524756922933, guid: bd4eff165d57b9e45887c4c3b184d784, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -4.416
-      objectReference: {fileID: 0}
-    - target: {fileID: 5396529524756922933, guid: bd4eff165d57b9e45887c4c3b184d784, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
