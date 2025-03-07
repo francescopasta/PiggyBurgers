@@ -17,8 +17,8 @@ public class ClickFruitScript : MonoBehaviour
         {
             if (fruit == gameObject.tag)
             {
-                //fruitStorage.totalScore += ;
-                fruitStorage.AddMass(fruitStorage.fruitToPoint[fruit]);
+                fruitStorage.totalScore += fruitStorage.fruitToPoint[fruit];
+                fruitStorage.AddMass();
             }
         }
     }
