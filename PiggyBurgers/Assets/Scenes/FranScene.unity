@@ -487,10 +487,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2654552849602808443, guid: bd4eff165d57b9e45887c4c3b184d784, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 39c5f9b8ad25d4e47a03384978e76f53, type: 2}
     - target: {fileID: 4681993387153931745, guid: bd4eff165d57b9e45887c4c3b184d784, type: 3}
       propertyPath: m_Name
       value: PIG
       objectReference: {fileID: 0}
+    - target: {fileID: 4843135654610522116, guid: bd4eff165d57b9e45887c4c3b184d784, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 39c5f9b8ad25d4e47a03384978e76f53, type: 2}
     - target: {fileID: 5396529524756922933, guid: bd4eff165d57b9e45887c4c3b184d784, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.9

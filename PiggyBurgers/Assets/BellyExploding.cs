@@ -11,27 +11,40 @@ public class BellyExploding : MonoBehaviour
 
     void Start()
     {
+        totalScore = (int)transform.localScale.x;
         fruitToPoint = new Dictionary<string, int>
         {
-            { "Watermelon", -2 },
-            { "Cherry", -2 },
-            { "Banana", 7 }
+            { "Watermelon", -1 },
+            { "Cherry", -1 },
+            { "Banana", 2 },
+            { "Cheese", 1 },
+            { "Olive", 1 },
+            { "Hamburger", 2 },
+            { "Hotdog", 2 }
         };
         StartCoroutine(RemoveMass());
     }
 
-    public void AddMass(int mass)
+    private void Update()
     {
-        transform.localScale += mass * new Vector3(1, 1, 1);
+        //if(totalScore > 10)
+        //{
+        //    pig.SetActive(false);
+        //}
+    }
+
+    public void AddMass()
+    {
+        transform.localScale = totalScore * new Vector3(1, 1, 1);
     }
 
     IEnumerator RemoveMass()
     {
-        if(totalScore > -8)
+        if(totalScore > 0 || totalScore < 0)
         {
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(2);
             totalScore -= 2;
-            transform.localScale += totalScore * new Vector3(1, 1, 1);
+            transform.localScale = totalScore * new Vector3(1, 1, 1);
             StartCoroutine(RemoveMass());
         } else
         {
