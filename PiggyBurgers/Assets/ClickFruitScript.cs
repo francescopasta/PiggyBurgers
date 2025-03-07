@@ -5,7 +5,7 @@ using UnityEngine;
 public class ClickFruitScript : MonoBehaviour
 {
     public string fruitTag;
-    public FoodStorage fruitStorage;
+    public BellyExploding fruitStorage;
     
     private void Start()
     {
@@ -17,7 +17,8 @@ public class ClickFruitScript : MonoBehaviour
         {
             if (fruit == gameObject.tag)
             {
-                fruitStorage.totalScore += fruitStorage.fruitToPoint[fruit];
+                //fruitStorage.totalScore += ;
+                fruitStorage.AddMass(fruitStorage.fruitToPoint[fruit]);
             }
         }
     }
