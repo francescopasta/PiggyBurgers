@@ -27,10 +27,10 @@ public class BellyExploding : MonoBehaviour
 
     private void Update()
     {
-        //if (totalScore > 10)
-        //{
-        //    pig.AddForce();
-        //}
+        if (totalScore > 130)
+        {
+            Debug.Log("Explode Pig");
+        }
     }
 
     public void AddMass()
@@ -40,7 +40,7 @@ public class BellyExploding : MonoBehaviour
 
     IEnumerator RemoveMass()
     {
-        if(totalScore > 0 || totalScore < 0)
+        if(totalScore > 68)
         {
             yield return new WaitForSeconds(2);
             totalScore -= 2;
@@ -49,6 +49,7 @@ public class BellyExploding : MonoBehaviour
         } else
         {
             pig.SetActive(false);
+            Debug.Log("Died of Anorexia");
         }
     }
 }
