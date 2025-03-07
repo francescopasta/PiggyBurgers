@@ -17,16 +17,28 @@ PrefabInstance:
       value: Olive
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bd232805ec57aa245a81c2df3f69f66a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: bd232805ec57aa245a81c2df3f69f66a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: bd232805ec57aa245a81c2df3f69f66a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: bd232805ec57aa245a81c2df3f69f66a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 2.87
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bd232805ec57aa245a81c2df3f69f66a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.1429999
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bd232805ec57aa245a81c2df3f69f66a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bd232805ec57aa245a81c2df3f69f66a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -62,18 +74,38 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: bd232805ec57aa245a81c2df3f69f66a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 9140753899837734703}
+      addedObject: {fileID: 7936055619913201478}
     - targetCorrespondingSourceObject: {fileID: 100000, guid: bd232805ec57aa245a81c2df3f69f66a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7936055619913201478}
+      addedObject: {fileID: 436881517945755702}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: bd232805ec57aa245a81c2df3f69f66a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1753928503894699540}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: bd232805ec57aa245a81c2df3f69f66a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8822252114371055197}
   m_SourcePrefab: {fileID: 100100000, guid: bd232805ec57aa245a81c2df3f69f66a, type: 3}
 --- !u!1 &2559634744578900613 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: bd232805ec57aa245a81c2df3f69f66a, type: 3}
   m_PrefabInstance: {fileID: 2559634744578802725}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &9140753899837734703
-BoxCollider:
+--- !u!114 &7936055619913201478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2559634744578900613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e8f921e3dd51754b98c1cca15bfab90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fruitTag: 
+  fruitStorage: {fileID: 0}
+--- !u!136 &436881517945755702
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -90,10 +122,39 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.2307464, y: 0.18461043, z: 0.1843642}
+  serializedVersion: 2
+  m_Radius: 0.1153732
+  m_Height: 0.18461043
+  m_Direction: 1
   m_Center: {x: 0, y: 0.09230521, z: 0}
---- !u!114 &7936055619913201478
+--- !u!54 &1753928503894699540
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2559634744578900613}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 8
+  m_CollisionDetection: 0
+--- !u!114 &8822252114371055197
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -102,8 +163,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2559634744578900613}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e8f921e3dd51754b98c1cca15bfab90, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fc0fbb1a70978d41a55b2c8b0343e86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fruitTag: 
-  fruitStorage: {fileID: 0}
+  rotationSpeed: 50
